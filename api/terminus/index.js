@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express();
 
-const { signUp } = require('./terminusController');
+const { signup } = require('./terminusController');
 
-router.post('/signup', signUp);
+router.post('/signup', signup);
 
 module.exports = router;

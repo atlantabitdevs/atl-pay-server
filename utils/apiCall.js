@@ -1,15 +1,15 @@
 const fetch = require('node-fetch');
 const BASE_URL = process.env.BASE_URL;
-const MACAROON = process.env.MACAROON;
-const TOKEN = process.env.TOKEN;
+const API_KEY = process.env.API_KEY;
 
 const apiCall = async (path, method, json = null) => {
     if (json) {
+        console.log(BASE_URL + path)
         return await fetch(BASE_URL + path, {
             method: method,
             headers: {
                 'Content-Type': 'application/json',
-                Cookie: `macaroon=${MACAROON}; token=${TOKEN}`,
+                macaroon: API_KEY,
             },
             credentials: 'include',
             body: JSON.stringify(json),
@@ -19,7 +19,7 @@ const apiCall = async (path, method, json = null) => {
             method: method,
             headers: {
                 'Content-Type': 'application/json',
-                Cookie: `macaroon=${MACAROON}; token=${TOKEN}`,
+                macaroon: API_KEY,
             },
             credentials: 'include',
         });

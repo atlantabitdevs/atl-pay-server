@@ -1,5 +1,5 @@
 const dotenv = require('dotenv');
-dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
+dotenv.config();
 
 const PORT = process.env.PORT || 4000;
 const cors = require('cors');
@@ -23,7 +23,7 @@ app.get('/', async (req, res) => {
     res.send(`Health check! Server running on port ${PORT}!`);
 });
 
-const invoice = require('./api/terminus');
-app.use('/api/v1/invoice', invoice);
+const terminus = require('./api/terminus');
+app.use('/api/v1/terminus', terminus);
 
 module.exports = app;

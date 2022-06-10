@@ -6,7 +6,8 @@ const signup = async (req, res) => {
         const tier = req.body.tier;
         const info = req.body.info;
         const recurrence = req.body.recurrence;
-        const response = await terminusService.signup(tier, info, recurrence);
+        const offerId = req.body.offerId;
+        const response = await terminusService.signup(offerId);
 
         debug.info(`Sign Up Response: ${JSON.stringify(response)}`);
 
