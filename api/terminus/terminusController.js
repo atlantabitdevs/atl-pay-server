@@ -4,10 +4,9 @@ const terminusService = require('./terminusService');
 const signup = async (req, res) => {
     try {
         const tier = req.body.tier;
-        const info = req.body.info;
+        // const info = req.body.info;
         const recurrence = req.body.recurrence;
-        const offerId = req.body.offerId;
-        const response = await terminusService.signup(offerId);
+        const response = await terminusService.signup(tier, recurrence);
 
         debug.info(`Sign Up Response: ${JSON.stringify(response)}`);
 

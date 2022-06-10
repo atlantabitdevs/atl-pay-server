@@ -14,9 +14,6 @@
     "description": "tier 1 - pleb",
     "vendor": "Terminus Electric Money Lab",
     "label": "tier-11:pleb-1-month",
-    "recurrence": "1months",
-    "recurrence_base": "@1654819200",
-    "recurrence_limit": "0"
 }
 ```
 - Sovereign

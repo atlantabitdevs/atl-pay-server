@@ -1,17 +1,14 @@
 const debug = require('../../utils/debug');
-const { apiCall } = require('../../utils/apiCall')
+const offerMap = require('../../utils/offerMap');
+const apiCall = require('../../utils/apiCall')
 
-const signup = async (offerId) => {
+const signup = async (tier, recurrence) => {
     try {
+
         // store data in DB?
-        var lnhash;
-        const offers = await apiCall('/offers/listOffers', 'GET')
-        for(let offer in offers){
-            if(offer.offer_id == offerId){
-                lnhash = offer.bolt12
-            }
-        }
-        return { success: true, message: lnhash };
+        const offerId = offerMap[tier + recurrence]
+        const offer = await apiCall(`/v1/offers/listOffers?offer_id=${offerId}`, 'GET')
+        return { success: true, message: offer.bolt12 };
     } catch (error) {
         debug.error(error.stack, error.status, error.message);
         throw new Error(error);

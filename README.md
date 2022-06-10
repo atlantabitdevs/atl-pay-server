@@ -20,12 +20,12 @@ Bitcoiner co-working subscriptions powered by BOLT12 (Back-end)
 - Body:
 ```json
 {
-    "tier": 3,
+    "tier": "3",
     "info": {
         "nameNym": "Satoshi",
         "email": "satoshin@gmx.com"
     },
-    "recurrence": 3
+    "recurrence": "3"
 }
 ```
 
