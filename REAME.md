@@ -1,4 +1,6 @@
+
 # Terminus Pay Server Backend
+Bitcoiner co-working subscriptions powered by BOLT12 (Back-end)
 
 ## Tiers
 - 1: pleb
@@ -12,7 +14,10 @@
 
 ## Examples
 
-### /api/v1/terminus/signup
+### Route
+- path: /api/v1/terminus/signup
+- method: POST
+- Body:
 ```json
 {
     "tier": 3,
@@ -23,3 +28,6 @@
     "recurrence": 3
 }
 ```
+
+### offers
+- Checkout out [OFFERS.md](./OFFERS.md) for offer details and examples
