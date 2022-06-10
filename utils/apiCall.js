@@ -5,16 +5,18 @@ const HEADERS = { 'Content-Type': 'application/json', macaroon: API_KEY };
 
 const apiCall = async (path, method, json = null) => {
     if (method == 'POST') {
-        return await fetch(BASE_URL + path, {
+        const req = await fetch(BASE_URL + path, {
             method: method,
             headers: HEADERS,
             body: JSON.stringify(json),
         });
+        return await req.json()
     } else {
-        return await fetch(BASE_URL + path, {
+        const req = await fetch(BASE_URL + path, {
             method: method,
             headers: HEADERS,
         });
+        return await req.json()
     }
 };
 
