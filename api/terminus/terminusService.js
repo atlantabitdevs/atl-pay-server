@@ -1,6 +1,6 @@
 const debug = require('../../utils/debug');
 const offerMap = require('../../utils/offerMap');
-const { apiCall } = require('../../utils/apiCall')
+const apiCall = require('../../utils/apiCall')
 const bitcoiners = require('../../db/collection');
 
 const signup = async (info, tier, recurrence) => {

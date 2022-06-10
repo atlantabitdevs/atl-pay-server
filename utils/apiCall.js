@@ -3,7 +3,7 @@ const BASE_URL = process.env.BASE_URL;
 const API_KEY = process.env.API_KEY;
 const HEADERS = { 'Content-Type': 'application/json', macaroon: API_KEY };
 
-const apiCall = async (path, method, json = null) => {
+module.exports = apiCall = async (path, method, json = null) => {
     if (method == 'POST') {
         const req = await fetch(BASE_URL + path, {
             method: method,
@@ -19,5 +19,3 @@ const apiCall = async (path, method, json = null) => {
         return await req.json()
     }
 };
-
-module.exports = { apiCall };
